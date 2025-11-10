@@ -1,0 +1,311 @@
+/* 1. Reset y Tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Color de fondo claro */
+    padding-top: 60px; /* Deja espacio para la navbar fija */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. Barra de Navegación Fija */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #333;
+    text-decoration: none; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    font-size: 0.8rem; /* Pequeño para móvil */
+}
+
+/* Colores de los botones */
+.btn-inicio { background-color: rgb(156, 163, 175); } /* Botón "Volver" en gris */
+.btn-etica { background-color: rgb(236, 72, 153); } /* Fucsia */
+.btn-plan-a { background-color: rgb(201, 1, 241); } /* Morado */
+.btn-plan-b { background-color: rgb(75, 87, 255); } /* Azul */
+
+.btn-inicio:hover { background-color: rgb(107, 114, 128); }
+.btn-etica:hover { background-color: rgb(219, 39, 119); } 
+.btn-plan-a:hover { background-color: rgb(160, 0, 200); }
+.btn-plan-b:hover { background-color: rgb(50, 60, 200); }
+
+
+/* Estilo del Podcast (si lo usas en el futuro) */
+/* (Se mantiene el estilo para evitar errores, pero no se usará en el HTML) */
+.nav-podcast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.75rem;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.nav-podcast:hover {
+    background-color: #eee;
+}
+
+.podcast-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.podcast-text {
+    display: none; /* Oculto por defecto en móvil */
+    font-weight: 500;
+}
+
+
+/* 3. Contenido Principal */
+.main-title {
+    background-color: #fbcfe8; /* Color rosa, consistente para todos los títulos */
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #333; /* Color de texto negro */
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.content-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para la imagen circular con borde rosa */
+.profile-img {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular */
+    border: 5px solid #f9a8d4; /* Borde rosa claro */
+}
+
+/* Estilos de texto por defecto */
+.text-es {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.text-en { 
+    color: #8b5cf6; /* Morado por defecto (aunque será sobreescrito en las tarjetas) */
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* 4. Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer h4 {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* 5. Media Queries (Responsividad) */
+@media (min-width: 600px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .nav-btn {
+        font-size: 1rem;
+    }
+    .podcast-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .podcast-text {
+        display: inline;
+        margin-left: 4px;
+    }
+    .nav-podcast {
+        flex-direction: row;
+        font-size: 1rem;
+        padding: 8px 12px;
+        gap: 4px;
+    }
+}
+
+/* --- 6. Estilos de Tarjetas (Plan A: Morado) --- */
+
+/* Contenedor Flexbox para agrupar las tarjetas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: stretch; 
+    flex-wrap: wrap; 
+}
+
+/* El estilo de la tarjeta morada (Plan A) */
+.plan-card {
+    background-color: #ede9fe; /* Morado pálido (lavanda) */
+    border: 1px solid #c4b5fd; /* Borde morado más oscuro */
+    border-radius: 15px;      
+    padding: 20px;            
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    
+    flex-grow: 1; 
+    flex-basis: 220px; 
+    max-width: 260px; 
+}
+
+/* El texto en inglés en la tarjeta morada */
+.plan-card .text-en {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #5b21b6; /* Morado oscuro para buen contraste */
+    margin-bottom: 0;
+}
+
+/* --- 7. Estilos de Tarjetas (Plan B: Azul) --- */
+
+/* El estilo de la tarjeta azul (Plan B) */
+.plan-card-b {
+    background-color: #dbeafe; /* Azul pálido */
+    border: 1px solid #93c5fd; /* Borde azul */
+    
+    border-radius: 15px;      
+    padding: 20px;            
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    
+    flex-grow: 1; 
+    flex-basis: 220px; 
+    max-width: 260px; 
+}
+
+/* El texto en español en la tarjeta azul */
+.plan-card-b .text-es {
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 1.15rem;
+    margin-bottom: 5px; 
+}
+
+/* El texto en inglés en la tarjeta azul */
+.plan-card-b .text-en {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #1e40af; /* Azul oscuro para contraste */
+    font-style: italic; 
+    margin-bottom: 0;
+}
+
+/* --- 8. Estilos de Imagen de Tarjeta (Común a Plan A y B) --- */
+
+/* Estilo de la imagen dentro de CUALQUIER tarjeta (Plan A o B) */
+.plan-card img, .plan-card-b img {
+    width: 100%;
+    max-width: 180px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover sobre la imagen de CUALQUIER tarjeta */
+.plan-card img:hover, .plan-card-b img:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.podcast-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+.podcast-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+           
+    display: none; 
+}
+.podcast-player {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto 0 auto; 
+}
+
+.nav-podcast-btn {
+    background-color: #007bff; 
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.nav-podcast-btn:hover {
+    background-color: #0056b3;
+}
+       
+.paragraph-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #eee;
+}
